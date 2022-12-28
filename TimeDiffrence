@@ -1,0 +1,18 @@
+	public Boolean TimeDiffrence(String ReturnTime, String timeserver) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		Date d1 = null;
+		Date d2 = null;
+		boolean time = false;
+		try {
+			d1 = format.parse(ReturnTime);
+			d2 = format.parse(timeserver);
+			time = d2.getTime() >= d1.getTime();
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+		}
+		return time;
+	}
+  
+  
+  
